@@ -1,0 +1,34 @@
+<div id="d1"></div>
+
+<script>
+    function Animal() {
+        this.foot = 2;
+    }
+
+    Animal.prototype.getFoot = function() {
+        return this.foot;
+    };
+
+    function Dog() {
+        this.head = 1;
+    }
+
+    var a = new Animal();
+    Dog.prototype = a;
+    Dog.prototype.constructor = Dog;
+
+
+    Dog.prototype.getHead = function() {
+        return this.head;
+    };
+
+    function RedDog() {
+
+    }
+    var d = new Dog();
+    RedDog.prototype = d;
+    RedDog.prototype.constructor = RedDog;
+
+    var rd = new RedDog();
+    console.log(rd);
+</script>

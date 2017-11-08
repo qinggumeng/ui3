@@ -1,0 +1,35 @@
+<ul id="d1">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+
+<script>
+var lis = document.getElementsByTagName("li");
+for(var i=0;i<lis.length;i++){
+  lis[i].onclick = function(){
+    huanYuan();
+    this.style.background = "darkblue";
+    this.style.color = "white";
+  };
+}
+
+function huanYuan(){
+  for(var i=0;i<lis.length;i++){
+    lis[i].style.background = "";
+    lis[i].style.color = "";
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+

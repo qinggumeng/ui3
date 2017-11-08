@@ -1,0 +1,28 @@
+<div id="d1" style="background:yellow;color:red;font-size:100px;font-weight:900;"></div>
+<script>
+function show(){
+ var now = new Date();
+var y = now.getFullYear();
+var m = now.getMonth()+1;
+var d = now.getDate();
+var h = now.getHours();
+var f = now.getMinutes();
+var s = now.getSeconds();
+var weeks = ["日","一","二","三","四","五","六"];
+var w = "星期"+weeks[now.getDay()];
+var str = y+"年"+m+"月"+d+"日"+" "+h+":"+f+":"+(s<10?"0"+s:s)+" "+w;
+d1.innerHTML =str;
+
+}
+
+show();
+
+setInterval(show,1000);
+</script>
+
+
+
+
+
+
+

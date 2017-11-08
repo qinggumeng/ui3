@@ -1,0 +1,22 @@
+<style>
+    .d1 {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+</style>
+
+<script>
+    var colors = ["red", "green", "blue", "yellow", "orange", "cyan", "pink", "purple", "darkred", "black", "gray", "gold"];
+    document.onclick = function(e) {
+        var d1 = document.createElement("div");
+        d1.className = "d1";
+        d1.style.left = e.pageX;
+        d1.style.top = e.pageY;
+        d1.style.opacity = 0.1 + Math.random();
+        d1.style.transform = "scale(" + (Math.random() + 0.1) + ")";
+        d1.style.background = colors[Math.floor(Math.random() * colors.length)];
+        document.body.appendChild(d1);
+    };
+</script>

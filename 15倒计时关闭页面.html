@@ -1,0 +1,20 @@
+﻿<input type="button" value="close" id="closebtn" />
+
+<script>
+var i = 10;
+
+closebtn.onclick = function(){
+  closebtn.disabled = "disabled";
+  closebtn.value = i;
+  setTimeout(guanbi,10000);
+  setInterval(show,1000);
+};
+
+function show(){
+  closebtn.value = --i;
+}
+
+function guanbi(){
+  close();
+}
+</script>

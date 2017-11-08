@@ -1,0 +1,52 @@
+<input type="button" value="stop" id="btn2" />
+
+<script>
+    function Tank(x, y, speed) {
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+        this.ele = document.createElement("img");
+        var e = this.ele;
+        var s = e.style;
+        this.flag = true;
+
+        e.src = "2.png";
+        s.position = "absolute";
+        s.left = this.x;
+        s.top = this.y;
+
+        document.body.appendChild(e);
+
+        this.forward = function() {
+            if (this.flag) {
+                s.left = parseInt(s.left) + this.speed;
+                var t = this;
+
+                setTimeout(function() {
+                    t.forward();
+                }, 100);
+            }
+        };
+
+        this.goback = function() {
+            s.left = parseInt(s.left) - this.speed;
+        };
+
+        this.stop = function() {
+            this.flag = false;
+        }
+    }
+
+
+    window.onload = function() {
+
+        var tank1 =
+            new Tank(100, 100, 5);
+        tank1.forward();
+
+
+        btn2.onclick = function() {
+            tank1.stop();
+        };
+    };
+</script>

@@ -1,0 +1,56 @@
+<input type="button" value="·É" id="hitbtn" />
+
+<div id="d1"style="width:100px;height:100px;background:red;position:absolute;left:800px;top:50px;opacity:1;"></div>
+
+<script>
+hitbtn.onclick = function(){
+  var bullet = document.createElement("img");
+  bullet.src = "bullet7.png";
+  bullet.style.transform = "rotate(90deg)";
+  bullet.style.position = "absolute";  
+  bullet.style.left = 50;
+  bullet.style.top = 50;
+  document.body.appendChild(bullet);
+  pao(bullet);
+};
+
+function pao(bullet){
+  bullet.timer = setInterval(function(){f(bullet);},30);
+}
+
+function f(bullet){
+  d1.innerHTML = bullet.style.left;
+  bullet.style.left = parseInt(bullet.style.left) + 10;
+  if(parseInt(bullet.style.left)>768){
+    xiaoshi();
+    clearInterval(bullet.timer);
+    document.body.removeChild(bullet);
+  }
+}
+
+function xiaoshi(){
+  d1.timer = setInterval(x,20);
+}
+
+function x(){
+  d1.style.opacity = parseFloat(d1.style.opacity) - 0.1;
+  if(parseFloat(d1.style.opacity)==0){
+    clearInterval(d1.timer );
+    document.body.removeChild(d1);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

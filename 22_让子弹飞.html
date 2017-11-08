@@ -1,0 +1,40 @@
+<input type="button" value="让子弹飞" id="hitbtn" />
+
+<script>
+hitbtn.onclick = function(){
+  var bullet = document.createElement("img");
+  bullet.src = "bullet7.png";
+  bullet.style.transform = "rotate(90deg)";
+  bullet.style.position = "absolute";  
+  bullet.style.left = 50;
+  bullet.style.top = 50;
+  document.body.appendChild(bullet);
+  pao(bullet);
+};
+
+function pao(bullet){
+  bullet.timer = setInterval(function(){f(bullet);},30);
+}
+
+function f(bullet){
+  bullet.style.left = parseInt(bullet.style.left) + 10;
+  if(parseInt(bullet.style.left)>1000){
+    clearInterval(bullet.timer);
+    document.body.removeChild(bullet);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

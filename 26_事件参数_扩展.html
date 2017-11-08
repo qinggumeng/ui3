@@ -1,0 +1,59 @@
+<style>
+    .d1 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: red;
+        cursor: move;
+        left: 100px;
+        top: 100px;
+    }
+    
+    #d2 {
+        background: green;
+        left: 300px;
+        top: 300px;
+    }
+    
+    #d3 {
+        background: blue;
+        left: 500px;
+        top: 500px;
+    }
+</style>
+
+<div class="d1" id="d1"></div>
+<div class="d1" id="d2"></div>
+<div class="d1" id="d3"></div>
+
+<script>
+    HTMLElement.prototype.dong = function() {
+        var flag;
+        var x;
+        var y;
+        var d1 = this;
+
+        d1.onmousedown = function(e) {
+            flag = true;
+            x = e.pageX - d1.offsetLeft;
+            y = e.pageY - d1.offsetTop;
+            d1.style["z-index"] = 1;
+        };
+
+        d1.onmousemove = function(e) {
+            if (flag) {
+                d1.style.left = e.pageX - x;
+                d1.style.top = e.pageY - y;
+            }
+        };
+
+        d1.onmouseup = function(e) {
+            flag = false;
+            d1.style["z-index"] = 0;
+        };
+    };
+
+    d1.dong();
+    d2.dong();
+    d3.dong();
+</script>

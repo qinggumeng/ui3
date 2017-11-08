@@ -1,0 +1,114 @@
+<style>
+.box{
+  border:1px solid orange;
+  position:absolute;
+  padding:10px;
+  width:360px;
+  height:270px;
+  left:50%;
+  top:50%;
+  margin-left:-180px;
+  margin-top:-135px;
+  display:none;
+  background:white;
+}
+.clearfix:after{
+  display:table;
+  content:"";
+  clear:both;
+}
+.imgtxt{
+  margin:10px;
+  border-bottom:1px dashed black;
+  padding:10px;
+  transition:all .3s;
+  opacity:0;
+  height:0;
+  overflow:hidden;
+}
+.imgtxt>img{
+  float:left;
+  border-radius:50%;
+  margin-right:10px;
+}
+.imgtxt>div{
+  float:left;
+}
+</style>
+
+<input type="button" value="发帖" id="fatiebtn" onclick="fatie()" />
+
+<div class="box" id="box">
+  <input id="inputtitle" /><br />
+  <select id="bankuai">
+    <option value="直播">直播</option>
+    <option value="二次元">二次元</option>
+    <option value="理财">理财</option>
+  </select><br />
+  <textarea cols="48" rows="12" id="cnt"></textarea><br />
+  <input type="button" value="发布" onclick="fabu()" />
+</div>
+
+<script>
+var currentBox;
+
+function fatie(){
+  box.style.display = "block";
+}
+
+function fabu(){
+  box.style.display = "none";
+
+  var rn = Math.floor(Math.random()*4)+1;
+
+  var ss = document.createElement("div");
+  ss.className = "clearfix imgtxt";
+
+  var pic = document.createElement("img");
+  pic.src = "tou0"+rn+".jpg";
+  ss.appendChild(pic);
+
+  var txt = document.createElement("div");
+  ss.appendChild(txt);
+
+  var title = document.createElement("h3");
+  title.innerHTML = inputtitle.value;
+  txt.appendChild(title);
+  
+  var p = document.createElement("p");
+  p.innerHTML = bankuai.value + " " + cnt.value;
+  txt.appendChild(p);
+
+  if(currentBox){
+    document.body.insertBefore(ss,currentBox);
+  }else{
+    document.body.appendChild(ss);
+  }
+  currentBox = ss;
+
+  setTimeout(function(){
+    ss.style.opacity = '1';
+    ss.style.height = "100px";
+  },100);
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+<p align="center" id="p1">1111</p>
+<p align="center" id="p2">2222</p>
+<p align="center" id="p3">3333</p>
+
+<input type="button" value="新增一个段落" 
+id="newpbtn" />
+
+<script>
+
+newpbtn.onclick = function(){
+  var newp = document.createElement("p");
+  newp.innerHTML = "4444";
+  document.body.insertBefore(newp,newpbtn);
+};
+</script>
+
+
+
+
+
+
+
+
+
+

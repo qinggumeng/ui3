@@ -1,0 +1,33 @@
+<style>
+.on{
+  background:red;
+  color:white;
+}
+</style>
+<p align="center" id="p1">1111</p>
+<p align="center" id="p2">2222</p>
+<p align="center" id="p3">3333</p>
+
+
+<script>
+var ps = document.getElementsByTagName("p");
+for(var i=0;i<ps.length;i++){
+  ps[i].onmouseover = function(){
+    this.className = "on";
+  };
+
+  ps[i].onmouseout = function(){
+    this.className = "";
+  };
+}
+</script>
+
+
+
+
+
+
+
+
+
+

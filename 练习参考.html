@@ -1,0 +1,27 @@
+<script>
+    function Person(nation, skinColor) {
+        this.nation = nation;
+        this.skinColor = skinColor;
+    }
+
+    Person.prototype.showNation = function() {
+        return this.nation;
+    };
+
+    Person.prototype.showSkinColor = function() {
+        return this.skinColor;
+    };
+
+    function Woman(nation, skinColor, sex) {
+        Person.call(this, nation, skinColor);
+        this.sex = sex;
+    }
+
+    Woman.prototype = new Person();
+    Woman.prototype.showSex = function() {
+        return this.sex;
+    };
+
+    var w = new Woman("中国", "黄色", "女");
+    console.log(w);
+</script>

@@ -1,0 +1,53 @@
+<div id="d1">新浪</div>
+<input type="button" value="改变文字" id="btn1" />
+
+<hr />
+
+<input type="text" value="春" name="season" />
+<input type="text" value="夏" name="season" />
+<input type="text" value="秋" name="season" />
+<input type="text" value="冬" name="season" />
+
+<input type="button" value="四季名称" id="seasonBtn" />
+<input type="button" value="input内容" id="inputBtn" />
+<input type="button" value="清空页面内容" id="clearBtn" />
+<p id="p1"></p>
+
+<script>
+btn1.onclick = function(){
+  var d1 = document.getElementById("d1");
+  d1.innerHTML = "1";
+};
+
+seasonBtn.onclick = function(){
+  var seasons = document.getElementsByName("season");
+  var s = "";
+  for(var i=0;i<seasons.length;i++){
+    s = s + seasons[i].value;
+  }
+  p1.innerHTML = s;
+};
+
+inputBtn.onclick = function(){
+  var inputs = document.getElementsByTagName("input");
+  var s = "";
+  for(var i=0;i<inputs.length;i++){
+    s = s + inputs[i].value+" ";
+  }
+  p1.innerHTML = s;
+};
+
+clearBtn.onclick = function(){
+  document.body.innerHTML = "";
+};
+
+
+</script>
+
+
+
+
+
+
+
+
